@@ -13,7 +13,7 @@ var CategoryController = {
     },
     store: (req, res) => {
         const schema = Joi.object().keys({
-            name: Joi.string().required().unique(),
+            name: Joi.string().required(),
             status: Joi.number().required()
         })
         const { error } = schema.validate(req.body, options);
@@ -45,7 +45,7 @@ var CategoryController = {
     },
     update: (req, res) => {
         const schema = Joi.object().keys({
-            name: Joi.string().required().unique(),
+            name: Joi.string().required(),
             status: Joi.number().required()
         })
         const { error } = schema.validate(req.body, options);
